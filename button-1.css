@@ -1,0 +1,22 @@
+#submit {
+    display: inline-block;
+    background: linear-gradient(90deg, #FF6E00, #FF4500); /* گرادینت نارنجی */
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 110, 0, 0.3);
+}
+
+#submit:hover {
+    background: linear-gradient(90deg, #FF4500, #FF6E00); /* تغییر رنگ گرادینت در هاور */
+    box-shadow: 0 6px 15px rgba(255, 110, 0, 0.5);
+}
+
+#submit:active {
+    transform: scale(0.95); /* افکت کلیک */
+}
