@@ -24,7 +24,7 @@ add_action('admin_footer', function () {
             box-shadow:0 0 6px rgba(0,255,156,0.9);
         "></span>
         <span>
-            طراحی شده توسط <strong style="font-weight:600;">محمد بی باک</strong>
+            طراحی شده توسط <strong style="font-weight:600;">محمد بی باک 09130937471</strong>
         </span>
     </div>
     ';
