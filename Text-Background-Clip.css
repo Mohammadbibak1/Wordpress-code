@@ -1,0 +1,13 @@
+/* ==========================================
+   Text Background Clip Utilities
+   Makes the heading text display its inherited
+   background image using background-clip.
+   ========================================== */
+
+.text-bg-clip {
+    background: inherit;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
