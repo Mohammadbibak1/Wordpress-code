@@ -1,0 +1,117 @@
+/* --- تنظیمات دسکتاپ: عکس اصلی سمت چپ، ستون عمودی گالری سمت راست --- */
+selector .woocommerce-product-gallery {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    gap: 15px !important;
+    align-items: stretch !important;
+    width: 100% !important;
+}
+
+selector .woocommerce-product-gallery__wrapper {
+    flex: 1 !important;
+    min-width: 0 !important;
+}
+
+selector .woocommerce-product-gallery__image img {
+    border-radius: 16px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* ستون عمودی دسکتاپ همراه با افکت محوکننده بالا و پایین */
+selector .flex-control-thumbs {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 80px !important;
+    min-width: 80px !important;
+    height: 100% !important;
+    max-height: 500px !important;
+    overflow-y: auto !important;
+    padding: 20px 2px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    scrollbar-width: none !important;
+    
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%);
+}
+
+selector .flex-control-thumbs::-webkit-scrollbar {
+    display: none !important;
+}
+
+selector .flex-control-thumbs li {
+    list-style: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+    flex-shrink: 0 !important;
+}
+
+selector .flex-control-thumbs img {
+    border-radius: 8px !important;
+    opacity: 0.4;
+    transition: all 0.3s ease !important;
+    border: 2px solid transparent !important;
+    cursor: pointer;
+    width: 76px !important;
+    height: 76px !important;
+    object-fit: cover !important;
+}
+
+selector .flex-control-thumbs img.flex-active,
+selector .flex-control-thumbs img:hover {
+    opacity: 1 !important;
+    border-color: #222 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+
+/* --- تنظیمات مخصوص موبایل (صفحات زیر 768 پیکسل): اسلایدر افقی با همان استایل --- */
+@media (max-width: 768px) {
+    selector .woocommerce-product-gallery {
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+
+    /* تبدیل به اسلایدر افقی مرتب در موبایل */
+    selector .flex-control-thumbs {
+        flex-direction: row !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        max-height: none !important;
+        height: auto !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        padding: 10px 5px !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        
+        /* افکت محو افقی برای سمت چپ و راست اسلایدر در موبایل */
+        -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%) !important;
+        mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%) !important;
+    }
+
+    selector .flex-control-thumbs li {
+        width: auto !important;
+        flex-shrink: 0 !important;
+    }
+
+    /* سایز و استایل تصاویر کوچک در اسلایدر افقی موبایل */
+    selector .flex-control-thumbs img {
+        width: 70px !important;
+        height: 70px !important;
+        flex-shrink: 0 !important;
+        opacity: 0.5 !important;
+    }
+
+    selector .flex-control-thumbs img.flex-active,
+    selector .flex-control-thumbs img:hover {
+        opacity: 1 !important;
+        border-color: #222 !important;
+        transform: translateY(-2px);
+    }
+}
